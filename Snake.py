@@ -82,7 +82,7 @@ def game_over():
     game_over_rect = game_over_surface.get_rect()
 
     # Setting position of the text
-    game_over_rect.midtop = (window_x/2, window_y/4)
+    game_over_rect.midtop = (int(window_x/2), int(window_y/4))
 
     # Blit will draw the text on screen
     game_window.blit(game_over_surface, game_over_rect)
