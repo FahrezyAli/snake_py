@@ -38,8 +38,8 @@ snake_body = [[100, 50],
               ]
 
 # Fruit position
-fruit_position = [random.randrange(1, (window_x//10)) * 10,
-                  random.randrange(1, (window_y//10)) * 10]
+fruit_position = [random.randrange(1, (window_x // 10)) * 10,
+                  random.randrange(1, (window_y // 10)) * 10]
 fruit_spawn = True
 
 # Setting default snake direction
@@ -50,9 +50,9 @@ change_to = direction
 # Initial score
 score = 0
 
+
 # Displaying score function
 def show_score(color, font, size):
-
     # Creating font object score_font
     score_font = pygame.font.SysFont(font, size)
 
@@ -67,9 +67,9 @@ def show_score(color, font, size):
     # Displaying text
     game_window.blit(score_surface, score_rect)
 
+
 # Game over function
 def game_over():
-
     # Creating font object my_font
     my_font = pygame.font.SysFont('times new roman', 50)
 
@@ -82,7 +82,7 @@ def game_over():
     game_over_rect = game_over_surface.get_rect()
 
     # Setting position of the text
-    game_over_rect.midtop = (int(window_x/2), int(window_y/4))
+    game_over_rect.midtop = (int(window_x / 2), int(window_y / 4))
 
     # Blit will draw the text on screen
     game_window.blit(game_over_surface, game_over_rect)
@@ -97,6 +97,7 @@ def game_over():
 
     # Quit the program
     quit()
+
 
 # Main function
 while True:
@@ -146,23 +147,23 @@ while True:
         snake_body.pop()
 
     if not fruit_spawn:
-        fruit_position = [random.randrange(1, (window_x//10)) * 10,
-                          random.randrange(1, (window_y//10)) * 10]
-    
+        fruit_position = [random.randrange(1, (window_x // 10)) * 10,
+                          random.randrange(1, (window_y // 10)) * 10]
+
     fruit_spawn = True
     game_window.fill(black)
 
     for pos in snake_body:
         pygame.draw.rect(game_window, green, pygame.Rect(
             pos[0], pos[1], 10, 10))
-        
+
     pygame.draw.rect(game_window, white, pygame.Rect(
         fruit_position[0], fruit_position[1], 10, 10))
-    
+
     # Game Over condition
-    if snake_position[0] < 0 or snake_position[0] > window_x-10:
+    if snake_position[0] < 0 or snake_position[0] > window_x - 10:
         game_over()
-    if snake_position[1] < 0 or snake_position[1] > window_y-10:
+    if snake_position[1] < 0 or snake_position[1] > window_y - 10:
         game_over()
 
     # Touching the snake body
