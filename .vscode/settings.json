@@ -1,9 +1,6 @@
 {
-    "cSpell.words": [
-        "blit",
-        "KEYDOWN",
-        "midtop",
-        "pygame"
-    ],
-    "python.analysis.typeCheckingMode": "basic"
+    "debug.javascript.defaultRuntimeExecutable": {
+        "pwa-node": "/Users/fahrezy/.local/share/mise/shims/node"
+    },
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv"
 }
